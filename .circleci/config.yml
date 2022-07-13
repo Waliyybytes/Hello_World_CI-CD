@@ -21,9 +21,9 @@ jobs:
           paths:
             - output.txt
   print_output_file:
-      docker:
+    docker:
       - image: circleci/node:13.8.0
-     steps:
+    steps:
       - checkout
       - run: cat myworkspace/output.txt 
 
