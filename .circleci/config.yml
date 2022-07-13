@@ -24,7 +24,12 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
+<<<<<<< HEAD
       - run: cat myworkspace/output.txt
+=======
+      - checkout
+      - run: cat myworkspace/output.txt 
+>>>>>>> 9ff35f9f2c602a23ce2397b6a776f3d546343283
 
 
 # Invoke jobs via workflows
