@@ -13,23 +13,18 @@ jobs:
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
-      - checkout
-      - run: mkdir -p myworkspace
-      - run: echo "Hello World"  >> myworkspace/output.txts
+      - run: echo "Hello World"  > ~/output.txt
       - persist_to_workspace:
-          root: myworkspace
+          root: ~/
           paths:
             - output.txt
   print_output_file:
     docker:
       - image: circleci/node:13.8.0
     steps:
-<<<<<<< HEAD
-      - run: cat myworkspace/output.txt
-=======
-      - checkout
-      - run: cat myworkspace/output.txt 
->>>>>>> 9ff35f9f2c602a23ce2397b6a776f3d546343283
+      - attach_workspace
+          at: ~/
+      - run: cat ~/output.txt
 
 
 # Invoke jobs via workflows
