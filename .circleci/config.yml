@@ -15,7 +15,7 @@ jobs:
     steps:
       - checkout
       - run: mkdir -p myworkspace
-      - run: echo "Hello World"  >> myworkspace/output.txt
+      - run: echo "Hello World"  >> myworkspace/output.txts
       - persist_to_workspace:
           root: myworkspace
           paths:
@@ -24,14 +24,18 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
+<<<<<<< HEAD
+      - run: cat myworkspace/output.txt
+=======
       - checkout
       - run: cat myworkspace/output.txt 
+>>>>>>> 9ff35f9f2c602a23ce2397b6a776f3d546343283
 
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  hello-world-workflow:
+  hello-world-workflow:......
     jobs:
       - save_hello_world_output
       - print_output_file:
