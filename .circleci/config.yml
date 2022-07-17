@@ -31,7 +31,7 @@ commands:
   print_pipelineID:
     description: "to print pipeline ID"
     steps: 
-      run: echo "Project pipeline ID is $CIRCLE_WORKFLOW_ID"
+      - run: echo "Project pipeline ID is $CIRCLE_WORKFLOW_ID"
 
 
 
