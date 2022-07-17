@@ -29,9 +29,12 @@ jobs:
 
 commands:
   printpipeline:
+<<<<<<< HEAD
     parameters:
       id:
         type: string
+=======
+>>>>>>> 7c5be0cef22d1dfdf4b009613801837c146f188d
     description: "to print pipeline ID"
     steps: 
       - run: echo << parameters.id >>
