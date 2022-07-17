@@ -22,9 +22,9 @@ jobs:
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
+      - printpipeline
+        id: < pipeline.id >>
       - run: echo "Hello World"  > ~/output.txt
-      - printpipeline:
-          id: << pipeline.id >>
       - persist_to_workspace:
           root: ~/
           paths:
@@ -45,6 +45,6 @@ workflows:
     jobs:
       - save_hello_world_output
       - print_output_file:
-          requires:
+            requires:
               - save_hello_world_output
         
